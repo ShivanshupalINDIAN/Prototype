@@ -10,13 +10,13 @@ export function Layout() {
   const isHomePage = location.pathname === '/'; // Adjust this condition as needed
 
   return (
-    <div className={`min-h-screen ${isHomePage ? colors.primary.bg : 'bg-white'} text-black`}>
+    <div className={`max-h-screen h-full ${isHomePage ? colors.primary.bg : 'bg-white'} text-black`}>
       <Header />
       <Sidebar />
       <main className="ml-64 pt-16 p-4">
-        <div className="max-w-[80%] mx-auto">
-          <Outlet />
-        </div>
+      <div className="max-w-[80%] mx-auto">
+        <Outlet />
+      </div>
       </main>
     </div>
   );

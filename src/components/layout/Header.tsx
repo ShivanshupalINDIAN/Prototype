@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Search, Bell, Menu, Settings, Filter, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Logo } from '../common/Logo';
 import { ThemeToggle } from '../theme/ThemeToggle';
 import { SettingsMenu } from '../settings/SettingsMenu';
 import { colors, componentStyles } from '../../styles/theme';
@@ -11,9 +10,16 @@ export function Header() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 ${colors.primary.bg} border-b ${colors.primary.border} shadow-sm z-50`}>
-      <div className="max-w-7xl mx-auto px-4 h-16">
+      <div className="max-w-7xl mx-auto px-4 h-20"> {/* Increased height */}
         <div className="flex items-center justify-between h-full">
-          <Logo />
+          
+            <div className="flex items-center mx-10"> {/* Added logo with margin */}
+            <img 
+              src="/path-to-jatayu_logo.png" 
+              alt="Jatayu Logo" 
+              className="h-12 w-auto" 
+            />
+            </div>
           
           <div className="hidden md:flex flex-1 max-w-xl mx-8">
             <div className="relative w-full">
@@ -31,34 +37,34 @@ export function Header() {
             
             <Link 
               to="/chat"
-              className={`p-2 ${colors.primary.hover} rounded-full text-black transition-colors`}
+              className={`p-3 ${colors.primary.hover} rounded-full text-black transition-colors`} // Increased padding
             >
-              <MessageSquare className="h-6 w-6" />
+              <MessageSquare className="h-7 w-7" /> {/* Increased size */}
             </Link>
             
             <Link 
               to="/filter"
-              className={`p-2 ${colors.primary.hover} rounded-full text-black transition-colors`}
+              className={`p-3 ${colors.primary.hover} rounded-full text-black transition-colors`} // Increased padding
             >
-              <Filter className="h-6 w-6" />
+              <Filter className="h-7 w-7" /> {/* Increased size */}
             </Link>
 
-            <button className={`p-2 ${colors.primary.hover} rounded-full text-black`}>
-              <Bell className="h-6 w-6" />
+            <button className={`p-3 ${colors.primary.hover} rounded-full text-black`}>
+              <Bell className="h-7 w-7" /> {/* Increased size */}
             </button>
             
             <button 
-              className={`p-2 ${colors.primary.hover} rounded-full text-black`}
+              className={`p-3 ${colors.primary.hover} rounded-full text-black`}
               onClick={() => setShowSettings(!showSettings)}
             >
-              <Settings className="h-6 w-6" />
+              <Settings className="h-7 w-7" /> {/* Increased size */}
             </button>
             
-            <button className={`md:hidden p-2 ${colors.primary.hover} rounded-full text-black`}>
-              <Menu className="h-6 w-6" />
+            <button className={`md:hidden p-3 ${colors.primary.hover} rounded-full text-black`}>
+              <Menu className="h-7 w-7" /> {/* Increased size */}
             </button>
 
-            <button className="w-8 h-8 rounded-full overflow-hidden">
+            <button className="w-10 h-10 rounded-full overflow-hidden"> {/* Increased size */}
               <img
                 src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=64"
                 alt="User avatar"
