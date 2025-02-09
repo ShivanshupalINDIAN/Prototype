@@ -1,2 +1,0 @@
-# Prototype
-Media platform prototype
