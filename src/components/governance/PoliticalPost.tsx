@@ -1,18 +1,18 @@
 import React from 'react';
 import { MessageCircle, Share2, ThumbsUp, MoreVertical } from 'lucide-react';
-import type { PoliticalPost as PoliticalPostType } from '../../types';
+import type { PoliticalPost } from '../../types';
 
 interface PoliticalPostProps {
-  post: PoliticalPostType;
+  post: PoliticalPost;
 }
 
 export function PoliticalPost({ post }: PoliticalPostProps) {
   return (
-    <article className="bg-gray-900 rounded-lg overflow-hidden w-[40%]  mx-auto">
+    <article className="bg-gray-900 rounded-lg overflow-hidden w-[60%] mx-auto">
       {post.videoUrl && (
         <iframe
-          width="560"
-          height="315"
+          width="943"
+          height="655"
           src={post.videoUrl}
           title="YouTube video player"
           frameBorder="1"
@@ -40,7 +40,7 @@ export function PoliticalPost({ post }: PoliticalPostProps) {
           <div className="flex-1">
             <div className="flex justify-between items-start">
               <div>
-                <h3 className="font-semibold text-xl">{post.title}</h3>
+                <h3 className="font-semibold text-xl text-white">{post.title}</h3>
                 <div className="flex items-center text-sm text-gray-400 mt-1">
                   <span className="font-medium">{post.author.name}</span>
                   {post.author.verified && (
@@ -59,27 +59,27 @@ export function PoliticalPost({ post }: PoliticalPostProps) {
               </button>
             </div>
             
-            <p className="mt-4 text-gray-200">{post.content}</p>
+            <p className="mt-4 text-white">{post.content}</p>
             <div className="mt-4">
-              <h4 className="font-semibold">Anonymous Comments:</h4>
+              <h4 className="font-semibold text-white">Anonymous Comments:</h4>
               <ul>
-                {post.anonymousComments.map((comment, index) => (
-                  <li key={index} className="text-gray-400">{comment}</li>
+                {post.anonymousComments.map((comment: string, index: number) => (
+                  <li key={index} className="text-white">{comment}</li>
                 ))}
               </ul>
             </div>
             <button className="mt-2 text-red-500">Report</button>
 
             <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-800">
-              <button className="flex items-center space-x-2 text-gray-400 hover:text-white">
+              <button className="flex items-center space-x-2 text-white hover:text-white">
                 <ThumbsUp className="h-5 w-5" />
                 <span>{post.likes.toLocaleString()}</span>
               </button>
-              <button className="flex items-center space-x-2 text-gray-400 hover:text-white">
+              <button className="flex items-center space-x-2 text-white hover:text-white">
                 <MessageCircle className="h-5 w-5" />
                 <span>{post.comments.toLocaleString()}</span>
               </button>
-              <button className="flex items-center space-x-2 text-gray-400 hover:text-white">
+              <button className="flex items-center space-x-2 text-white hover:text-white">
                 <Share2 className="h-5 w-5" />
                 <span>{post.shares.toLocaleString()}</span>
               </button>

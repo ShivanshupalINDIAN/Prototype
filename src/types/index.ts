@@ -1,4 +1,3 @@
-// Update the Post interface to include description
 export interface Post {
   id: string;
   user: User;
@@ -11,31 +10,18 @@ export interface Post {
   tags?: string[];
 }
 
-// Update the Short interface to include tags
-export interface Short {
-  id: string;
-  user: {
-    id: string;
-    username: string;
-    fullName: string;
+export interface PoliticalPost extends Post {
+  videoUrl?: string;
+  title: string;
+  author: {
+    name: string;
     avatar: string;
-    followers: number;
-    following: number;
-    isVerified: boolean;
-    socialCreditScore: number;
-    tokens: number;
-    protestsParticipated: number;
+    verified: boolean;
+    position: string;
   };
-  videoUrl: string;
-  videoUrls: string[]; // Added to support multiple video URLs
-  description: string;
-  likes: number;
-  comments?: number;
-  views: number;
-  timestamp: number;
-  tags: string[];
+  anonymousComments: string[];
+  shares: number; // Added shares property
 }
-
 
 export interface User {
   id: string;
@@ -52,21 +38,4 @@ export interface User {
   location: string; // Added location property
 }
 
-export interface Category {
-  id: string;
-  name: string;
-  description: string;
-  icon: string;
-}
-
-export interface Tab {
-  id: string;
-  label: string;
-}
-
-export interface Trend {
-  id: string;
-  title: string;
-  postCount: number;
-  category: string;
-}
+// Other interfaces remain unchanged
