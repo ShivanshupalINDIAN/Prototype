@@ -8,7 +8,19 @@ interface PoliticalPostProps {
 
 export function PoliticalPost({ post }: PoliticalPostProps) {
   return (
-    <article className="bg-gray-900 rounded-lg overflow-hidden w-[70%] mx-auto">
+    <article className="bg-gray-900 rounded-lg overflow-hidden w-[40%]  mx-auto">
+      {post.videoUrl && (
+        <iframe
+          width="560"
+          height="315"
+          src={post.videoUrl}
+          title="YouTube video player"
+          frameBorder="1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      )}
       {post.imageUrl && (
         <img
           src={post.imageUrl}
@@ -48,6 +60,15 @@ export function PoliticalPost({ post }: PoliticalPostProps) {
             </div>
             
             <p className="mt-4 text-gray-200">{post.content}</p>
+            <div className="mt-4">
+              <h4 className="font-semibold">Anonymous Comments:</h4>
+              <ul>
+                {post.anonymousComments.map((comment, index) => (
+                  <li key={index} className="text-gray-400">{comment}</li>
+                ))}
+              </ul>
+            </div>
+            <button className="mt-2 text-red-500">Report</button>
 
             <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-800">
               <button className="flex items-center space-x-2 text-gray-400 hover:text-white">

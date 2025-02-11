@@ -9,8 +9,26 @@ import { ProfilePage } from './pages/ProfilePage';
 import { ChatPage } from './pages/ChatPage';
 import { TrendingPage } from './pages/TrendingPage';
 import { FilterPage } from './pages/FilterPage';
+// import { AuthFlow } from './components/AuthFlow';
+// import React, { useState, useEffect } from 'react';
+
 
 function App() {
+  // const [showAuth, setShowAuth] = useState(false);
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowAuth(true);
+  //   }, 7000);
+
+  //   return () => clearTimeout(timer);
+  // }, []);
+
+  // if (showAuth) {
+  //   return <AuthFlow />;
+  // }
+
+
   return (
     <Router>
       <Routes>
@@ -21,7 +39,6 @@ function App() {
           <Route path="shorts" element={<ShortsPage />} />
           <Route path="protest" element={<ProtestPage />} />
           <Route path="profile" element={<ProfilePage />} />
-          {/* <Route path="chat/:roomId/:postId" element={<ChatRoom />} /> */}
         <Route path="chat/*" element={<ChatPage />} />
           <Route path="trending" element={<TrendingPage />} />
           <Route path="filter" element={<FilterPage />} />

@@ -18,7 +18,7 @@ const MOCK_SHORTS: Short[] = [
       tokens: 800,
       protestsParticipated: 15
     },
-    videoUrl: '/mock-video.mp4',
+    videoUrl: '/assets/s1.mp4',
     videoUrls: ['/assets/s1.mp4'], // Added videoUrls for s1
     description: 'Quick update from today\'s community meeting #LocalGov',
     likes: 1500,
