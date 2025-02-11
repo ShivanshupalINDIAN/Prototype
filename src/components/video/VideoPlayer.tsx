@@ -1,20 +1,21 @@
 import React from 'react';
 import { Play, Volume2, Settings, Maximize2 } from 'lucide-react';
-import type { Video } from '../../types';
+import type { Short } from '../../types';
 
 interface VideoPlayerProps {
-  video: Video;
+  video: Short; // Updated to use Short type
 }
 
 export function VideoPlayer({ video }: VideoPlayerProps) {
   return (
-    <div className="relative aspect-video w-full bg-black rounded-lg overflow-hidden group">
-      <video
-        src={video.videoUrl}
-        poster={video.thumbnailUrl}
-        className="w-full h-full object-cover"
-        controls={false}
-      />
+    <div className="relative aspect-[9/16] w-full bg-black rounded-lg overflow-hidden group">
+        <video
+          className="object-cover" // Removed duplicate className
+
+          src={video.videoUrl}
+          poster={video.thumbnailUrl}
+          controls={false}
+        />
       
       {/* Custom Controls Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">

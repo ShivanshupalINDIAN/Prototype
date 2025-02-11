@@ -1,21 +1,22 @@
 import React from 'react';
+import jatayuLogo from '../assets/jatayu_logo.png'; // Import the logo
 import { Link } from 'react-router-dom';
 import { MessageSquare } from 'lucide-react';
 import { Menu, Search, Bell } from 'lucide-react';
-
+import {logo} from'../../assets/jatayu_logo.png';
 export function Header() {
   return (
-    <header className="border-b border-gray-200 bg-white">
+    <header className="border-b border-gray-200 bg-gray-100"> {/* Change background color to gray */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20"> {/* Height set to 80px */}
 
-          <div className="flex items-center m-0">
-            <Link to="/chat" className="p-2 hover:bg-gray-100 rounded-full">
-              <MessageSquare className="h-6 w-6 text-gray-800" />
-            </Link>
-            <Menu className="h-6 w-6 text-gray-800" />
-            <h1 className="ml-4 text-xl font-bold text-gray-800">Jatayu</h1> {/* Font color set to black */}
-          </div>
+            <div className="flex items-center m-0 bg-white">
+            <Link to="/chat" className="p-2 hover:bg-gray-100 rounded-full" />
+            <MessageSquare className="h-6 w-6 text-gray-600" /> {/* Change icon color to gray-600 */}
+            <Menu className="h-6 w-6 text-gray-600" /> {/* Change icon color to gray-600 */}
+
+            <img src={jatayuLogo} alt="Jatayu Logo" className="h-8 ml-4" /> {/* Replace text with logo */}
+            </div>
           
           <div className="flex-1 max-w-2xl mx-4">
             <div className="relative">

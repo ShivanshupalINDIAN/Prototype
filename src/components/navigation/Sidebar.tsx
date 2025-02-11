@@ -1,6 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Home, Users, Video, Vote, User, TrendingUp } from 'lucide-react';
-import { Logo } from '../common/Logo';
 import { colors } from '../../styles/theme';
 
 const navItems = [
@@ -17,10 +16,7 @@ export function Sidebar() {
   const location = useLocation();
 
   return (
-    <aside className={`fixed left-0 top-0 h-full w-64 ${colors.primary.bg} ${colors.primary.border} border-r p-4`}>
-      <div className="mb-8">
-        <Logo />
-      </div>
+    <aside className={`fixed left-0 top-20 h-full w-64 ${colors.primary.bg} ${colors.primary.border} border-r p-4`}>
       <nav>
         <ul className="space-y-2">
           {navItems.map((item) => (

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Heart, MessageCircle, Share2, Bookmark, Flag, ThumbsDown, Play } from 'lucide-react';
 import { CommentSection } from '../comments/CommentSection';
+import { ReportModal } from '../../components/report/ReportModal';
 
 interface VideoEmbedProps {
   videoId: string;
@@ -24,13 +25,14 @@ export function VideoEmbed({
   const [isDisliked, setIsDisliked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
   const [showComments, setShowComments] = useState(isPrimary);
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
 
   return (
     <div className="bg-gray-900 rounded-lg overflow-hidden">
       <div className={`relative w-full pt-[56.25%] group ${className}`}>
         <iframe
           className="absolute top-0 left-0 w-full h-full"
-          src={`https://www.youtube.com/embed/${videoId}`}
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=${isPlaying ? 1 : 0}`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
@@ -106,7 +108,7 @@ export function VideoEmbed({
             <span>Save</span>
           </button>
 
-          <button className="flex items-center space-x-2 text-gray-400 hover:text-white">
+          <button className="flex items-center space-x-2 text-gray-400 hover:text-white" onClick={() => setIsReportModalOpen(true)}>
             <Flag className="w-5 h-5" />
             <span>Report</span>
           </button>
@@ -125,6 +127,9 @@ export function VideoEmbed({
 
         {showComments && <CommentSection />}
       </div>
+
+      {/* Report Modal */}
+      <ReportModal isOpen={isReportModalOpen} onClose={() => setIsReportModalOpen(false)} />
     </div>
   );
 }

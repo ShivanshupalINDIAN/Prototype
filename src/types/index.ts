@@ -14,15 +14,28 @@ export interface Post {
 // Update the Short interface to include tags
 export interface Short {
   id: string;
-  user: User;
+  user: {
+    id: string;
+    username: string;
+    fullName: string;
+    avatar: string;
+    followers: number;
+    following: number;
+    isVerified: boolean;
+    socialCreditScore: number;
+    tokens: number;
+    protestsParticipated: number;
+  };
   videoUrl: string;
+  videoUrls: string[]; // Added to support multiple video URLs
   description: string;
   likes: number;
-  comments: number;
+  comments?: number;
   views: number;
   timestamp: number;
   tags: string[];
 }
+
 
 export interface User {
   id: string;

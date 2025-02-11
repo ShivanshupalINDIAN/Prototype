@@ -14,11 +14,11 @@ export function Header() {
         <div className="flex items-center justify-between h-full">
           
             <div className="flex items-center mx-10"> {/* Added logo with margin */}
-            <img 
-              src="/path-to-jatayu_logo.png" 
-              alt="Jatayu Logo" 
-              className="h-12 w-auto" 
-            />
+              <span 
+              className={`text-2xl font-bold ${colors.primary.bg === 'bg-blue-500' ? 'text-white' : 'text-black'}`}
+              >
+              JATAYU
+              </span>
             </div>
           
           <div className="hidden md:flex flex-1 max-w-xl mx-8">
@@ -45,6 +45,7 @@ export function Header() {
             <Link 
               to="/filter"
               className={`p-3 ${colors.primary.hover} rounded-full text-black transition-colors`} // Increased padding
+              onClick={() => console.log('Filter logo clicked')} // Added click handler for debugging
             >
               <Filter className="h-7 w-7" /> {/* Increased size */}
             </Link>
@@ -74,7 +75,6 @@ export function Header() {
           </div>
         </div>
       </div>
-      
       {showSettings && <SettingsMenu />}
     </header>
   );

@@ -19,6 +19,7 @@ const MOCK_SHORTS: Short[] = [
       protestsParticipated: 15
     },
     videoUrl: '/mock-video.mp4',
+    videoUrls: ['/assets/s1.mp4'], // Added videoUrls for s1
     description: 'Quick update from today\'s community meeting #LocalGov',
     likes: 1500,
     comments: 89,
@@ -41,6 +42,7 @@ const MOCK_SHORTS: Short[] = [
       protestsParticipated: 20
     },
     videoUrl: '/mock-video-2.mp4',
+    videoUrls: ['/assets/s2.mp4'], // Added videoUrls for s2
     description: 'Understanding digital privacy rights in the modern age #DigitalRights',
     likes: 2300,
     comments: 156,
@@ -63,6 +65,7 @@ const MOCK_SHORTS: Short[] = [
       protestsParticipated: 25
     },
     videoUrl: '/mock-video-3.mp4',
+    videoUrls: [], // No additional videos for this entry
     description: 'New policy proposals for tech regulation #TechPolicy',
     likes: 3100,
     comments: 245,

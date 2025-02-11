@@ -8,20 +8,20 @@ export function GovernancePage() {
     <div className="space-y-8 p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         <div className="bg-gray-900 p-6 rounded-lg">
-          <Vote className="h-8 w-8 mb-4" />
-          <h2 className="text-xl font-semibold mb-2">Active Proposals</h2>
+          <Vote className="h-8 w-8 mb-4 text-white" />
+          <h2 className="text-xl font-semibold mb-2 text-white">Active Proposals</h2>
           <p className="text-gray-400">12 proposals need your vote</p>
         </div>
         
         <div className="bg-gray-900 p-6 rounded-lg">
-          <FileText className="h-8 w-8 mb-4" />
-          <h2 className="text-xl font-semibold mb-2">Policy Updates</h2>
+          <FileText className="h-8 w-8 mb-4 text-white" />
+          <h2 className="text-xl font-semibold mb-2 text-white">Policy Updates</h2>
           <p className="text-gray-400">Latest community guidelines</p>
         </div>
         
         <div className="bg-gray-900 p-6 rounded-lg">
-          <Users className="h-8 w-8 mb-4" />
-          <h2 className="text-xl font-semibold mb-2">Community Decisions</h2>
+          <Users className="h-8 w-8 mb-4 text-white" />
+          <h2 className="text-xl font-semibold mb-2 text-white">Community Decisions</h2>
           <p className="text-gray-400">View voting history</p>
         </div>
       </div>

@@ -14,14 +14,17 @@ export function ShortVideo({ short }: ShortVideoProps) {
     <div className="relative aspect-[9/16] w-full max-w-[400px] mx-auto bg-gray-900 rounded-lg overflow-hidden">
       {/* Video Container */}
       <div className="absolute inset-0">
-        <video
-          src={short.videoUrl}
-          className="w-full h-full object-cover"
-          loop
-          muted
-          playsInline
-          controls={false}
-        />
+        {short.videoUrls.map((videoUrl, index) => (
+          <video
+            key={index}
+            src={videoUrl}
+            className="w-full h-full object-cover"
+            loop
+            muted
+            playsInline
+            controls={false}
+          />
+        ))}
       </div>
 
       {/* Overlay Controls */}
@@ -35,17 +38,17 @@ export function ShortVideo({ short }: ShortVideoProps) {
             <Heart 
               className={`w-7 h-7 ${isLiked ? 'text-red-500 fill-red-500' : 'text-white'}`}
             />
-            <span className="text-xs mt-1">{short.likes.toLocaleString()}</span>
+            <span className="text-xs mt-1 text-white">{short.likes.toLocaleString()}</span>
           </button>
 
           <button className="flex flex-col items-center">
-            <MessageCircle className="w-7 h-7" />
-            <span className="text-xs mt-1">{short.comments?.toLocaleString() || '0'}</span>
+            <MessageCircle className="w-7 h-7 text-white" />
+            <span className="text-xs mt-1 text-white">{short.comments?.toLocaleString() || '0'}</span>
           </button>
 
           <button className="flex flex-col items-center">
-            <Share2 className="w-7 h-7" />
-            <span className="text-xs mt-1">Share</span>
+            <Share2 className="w-7 h-7 text-white" />
+            <span className="text-xs mt-1 text-white">Share</span>
           </button>
 
           <button 
@@ -55,16 +58,16 @@ export function ShortVideo({ short }: ShortVideoProps) {
             <Bookmark 
               className={`w-7 h-7 ${isSaved ? 'text-yellow-500 fill-yellow-500' : 'text-white'}`}
             />
-            <span className="text-xs mt-1">Save</span>
+            <span className="text-xs mt-1 text-white">Save</span>
           </button>
 
           <button className="flex flex-col items-center">
-            <MoreVertical className="w-7 h-7" />
+            <MoreVertical className="w-7 h-7 text-white" />
           </button>
         </div>
 
         {/* Bottom Info */}
-        <div className="absolute bottom-4 left-4 right-16">
+        <div className="absolute bottom-4 left-4 right-16 text-white">
           <div className="flex items-center space-x-2 mb-2">
             <img
               src={short.user.avatar}
