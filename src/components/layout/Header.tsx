@@ -9,13 +9,15 @@ export function Header() {
   const [showSettings, setShowSettings] = useState(false);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 ${colors.primary.bg} border-b ${colors.primary.border} shadow-sm z-50`}>
+<header className={`fixed top-0 left-0 right-0 bg-black border-b ${colors.primary.border} shadow-sm z-50`}>
+
       <div className="max-w-7xl mx-auto px-4 h-20"> {/* Increased height */}
         <div className="flex items-center justify-between h-full">
           
             <div className="flex items-center mx-10"> {/* Added logo with margin */}
-              <span 
-              className={`text-2xl font-bold ${colors.primary.bg === 'bg-blue-500' ? 'text-white' : 'text-black'}`}
+<span 
+              className={`text-2xl font-bold text-white`}
+
               >
               JATAYU
               </span>
@@ -35,33 +37,38 @@ export function Header() {
           <div className="flex items-center space-x-4">
             <ThemeToggle />
             
-            <Link 
+<Link 
               to="/chat"
-              className={`p-3 ${colors.primary.hover} rounded-full text-black transition-colors`} // Increased padding
+              className={`p-3 ${colors.primary.hover} rounded-full text-white transition-colors`} // Increased padding
+
             >
               <MessageSquare className="h-7 w-7" /> {/* Increased size */}
             </Link>
             
-            <Link 
+<Link 
               to="/filter"
-              className={`p-3 ${colors.primary.hover} rounded-full text-black transition-colors`} // Increased padding
+              className={`p-3 ${colors.primary.hover} rounded-full text-white transition-colors`} // Increased padding
+
               onClick={() => console.log('Filter logo clicked')} // Added click handler for debugging
             >
               <Filter className="h-7 w-7" /> {/* Increased size */}
             </Link>
 
-            <button className={`p-3 ${colors.primary.hover} rounded-full text-black`}>
+<button className={`p-3 ${colors.primary.hover} rounded-full text-white`}>
+
               <Bell className="h-7 w-7" /> {/* Increased size */}
             </button>
             
-            <button 
-              className={`p-3 ${colors.primary.hover} rounded-full text-black`}
+<button 
+              className={`p-3 ${colors.primary.hover} rounded-full text-white`}
+
               onClick={() => setShowSettings(!showSettings)}
             >
               <Settings className="h-7 w-7" /> {/* Increased size */}
             </button>
             
-            <button className={`md:hidden p-3 ${colors.primary.hover} rounded-full text-black`}>
+<button className={`md:hidden p-3 ${colors.primary.hover} rounded-full text-white`}>
+
               <Menu className="h-7 w-7" /> {/* Increased size */}
             </button>
 
