@@ -1,5 +1,6 @@
 import React from 'react';
-import { Settings, User, Bell, Shield, HelpCircle, LogOut } from 'lucide-react';
+import { User, Bell, Shield, HelpCircle, LogOut } from 'lucide-react';
+
 
 const menuItems = [
   { icon: User, label: 'Account Settings' },
