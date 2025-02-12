@@ -24,9 +24,19 @@ export function FilterPage() {
     }));
   };
 
-  const handleSubmit = () => {
+const handleSubmit = () => {
     console.log('Applied filters:', selectedFilters);
-    // Handle filter application logic here
+    // Example logic to apply filters (this should be replaced with actual filtering logic)
+    const filteredResults = allItems.filter(item => {
+        return (
+            (selectedFilters.contentType.length === 0 || selectedFilters.contentType.includes(item.contentType)) &&
+            (selectedFilters.topics.length === 0 || selectedFilters.topics.includes(item.topic)) &&
+            (selectedFilters.location.length === 0 || selectedFilters.location.includes(item.location)) &&
+            (selectedFilters.language.length === 0 || selectedFilters.language.includes(item.language))
+        );
+    });
+    console.log('Filtered results:', filteredResults);
+
   };
 
   const handleReset = () => {

@@ -15,19 +15,22 @@ export function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // const isFeaturePage = navItems.some(item => location.pathname === item.path);
+
+
   return (
-    <aside className={`fixed left-0 top-20 h-full w-64 ${colors.primary.bg} ${colors.primary.border} border-r p-4`}>
+<aside className={`fixed left-0 top-20 h-full w-64 bg-black border-r p-4`}>
+
       <nav>
         <ul className="space-y-2">
           {navItems.map((item) => (
             <li key={item.path}>
               <button
                 onClick={() => navigate(item.path)}
-                className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
-                  location.pathname === item.path
-                    ? 'bg-gray-900 text-white'
-                    : `${colors.secondary.text} ${colors.primary.hover}`
-                }`}
+                className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors text-white hover:bg-white hover:text-black ${location.pathname === item.path ? 'bg-white text-black' : `${colors.secondary.text} ${colors.primary.hover}`}`}
+                style={{ color: location.pathname === item.path ? 'black' : '' }}
+
+
               >
                 <item.icon className="h-6 w-6" />
                 <span className="text-lg">{item.label}</span>
