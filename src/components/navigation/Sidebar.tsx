@@ -19,7 +19,8 @@ export function Sidebar() {
 
 
   return (
-<aside className={`fixed left-0 top-20 h-full w-64 bg-black border-r p-4`}>
+<aside className={`fixed left-0 top-24 h-full w-80 bg-black border-r p-4`}>
+
 
       <nav>
         <ul className="space-y-2">

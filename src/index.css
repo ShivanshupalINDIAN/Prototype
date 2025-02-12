@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  margin-top: 2rem; /* Adjust as needed */
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
